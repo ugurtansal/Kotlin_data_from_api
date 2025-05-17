@@ -28,13 +28,23 @@ class AnasayfaViewModel @Inject constructor(var kisilerRepository:KisilerReposit
 
     fun kisileriYukle() {
         CoroutineScope(Dispatchers.Main).launch {
-           kisilerListesi.value = kisilerRepository.kisileriYukle()//Tetikleme
+
+            try {
+                kisilerListesi.value = kisilerRepository.kisileriYukle()//Tetikleme
+            }catch (e:Exception){
+                Log.e("HATA",e.message.toString())
+            }
         }
     }
 
     fun ara(aramaKelimesi:String){
         CoroutineScope(Dispatchers.Main).launch {
-            kisilerListesi.value = kisilerRepository.ara(aramaKelimesi)//Tetikleme
+
+            try {
+                kisilerListesi.value = kisilerRepository.ara(aramaKelimesi)//Tetikleme
+            }catch (e:Exception){
+                Log.e("HATA",e.message.toString())
+            }
         }
     }
 }

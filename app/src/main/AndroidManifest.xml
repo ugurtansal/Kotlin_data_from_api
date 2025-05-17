@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>  <!-- Internet izni kullanıcıdan alınacak -->
 
+    <!--Applicationın ilk kısmındaki true ifadesi bağlantının güvenli olduğu anlamına gelir ve http ise yazılması zorunludur , https için sertifika olduğu için yazılmasa da olur-->
     <application
         android:usesCleartextTraffic="true"
         android:name=".di.HiltApplication"
